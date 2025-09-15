@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+SELECT DATE_ID,
+        MAKE_NAME,
+        COUNT(DISTINCT LEAD_ID) AS UNIQUE_LEADS,
+        COUNT(DISTINCT partner_id) AS UNIQUE_PARTNERS
+FROM
+    DAILYSALES
+GROUP BY
+    DATE_ID,MAKE_NAME
