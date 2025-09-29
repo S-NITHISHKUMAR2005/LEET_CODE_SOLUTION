@@ -1,0 +1,7 @@
+SELECT T.ID,
+    CASE 
+        WHEN T.P_ID IS NULL THEN 'Root'
+        WHEN EXISTS (SELECT 1 FROM TREE R WHERE R.P_ID = T.ID) THEN 'Inner'
+        ELSE 'Leaf'
+    END AS TYPE
+FROM TREE T
